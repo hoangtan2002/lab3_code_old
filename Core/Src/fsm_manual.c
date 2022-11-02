@@ -50,7 +50,6 @@ void fsm_manual_state3(){
 		reinitStatus();
 		isSet++;
 	}
-
 }
 
 

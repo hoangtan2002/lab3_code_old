@@ -22,6 +22,4 @@ extern int mode;
 
 void reinitStatus();
 
-
-
 #endif /* INC_GLOBAL_H_ */

@@ -12,7 +12,6 @@ int segCounter = 0;
 int countDownTime1 = 0;
 int countDownTime2 = 0;
 
-
 void update7SEG ( int index ) {
 	switch ( index ) {
 	case 0:

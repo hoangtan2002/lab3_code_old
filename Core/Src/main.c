@@ -104,8 +104,8 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Infinite loop */
-  int counter = 0;
-    /* USER CODE BEGIN WHILE */
+
+  /* USER CODE BEGIN WHILE */
   while (1){
 	  modeset();
 	  fsm_auto_state1();
