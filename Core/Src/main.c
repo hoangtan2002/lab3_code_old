@@ -102,6 +102,7 @@ int main(void)
 
   /* Infinite loop */
 
+  int count = 0;
 
     /* USER CODE BEGIN WHILE */
   while (1){

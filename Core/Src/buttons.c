@@ -16,6 +16,7 @@ int TimeOutForKeyPress =  500;
 int button1_flag = 0;
 int button2_flag = 0;
 int button3_flag = 0;
+int button_pressed = 0;
 
 int isButton1Pressed(){
 	if(button1_flag == 1){
@@ -42,6 +43,9 @@ int isButton3Pressed(){
 }
 
 void subKeyProcess(int n){
+	if(n==0 || n > 4){
+		return;
+	}
 	switch(n){
 		case 1:
 			button1_flag = 1;
@@ -61,54 +65,24 @@ void getKeyInput1(){
   KeyReg2 = KeyReg1;
   KeyReg1 = KeyReg0;
   KeyReg0 = HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin);
-  if ((KeyReg1 == KeyReg0) && (KeyReg1 == KeyReg2)){
-    if (KeyReg2 != KeyReg3){
-      KeyReg3 = KeyReg2;
-      if (KeyReg3 == PRESSED_STATE){
-        TimeOutForKeyPress = 500;
-        subKeyProcess(1);
-      }
-    }
-    else{
-       TimeOutForKeyPress --;
-        if (TimeOutForKeyPress == 0){
-          KeyReg3 = NORMAL_STATE;
-        }
-    }
+  if(HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin)==PRESSED_STATE){
+	  KeyReg0 = PRESSED_STATE;
+	  button_pressed = 1;
   }
-}
-
-void getKeyInput2(){
-  KeyReg2 = KeyReg1;
-  KeyReg1 = KeyReg0;
-  KeyReg0 = HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, BUTTON2_Pin);
-  if ((KeyReg1 == KeyReg0) && (KeyReg1 == KeyReg2)){
-    if (KeyReg2 != KeyReg3){
-      KeyReg3 = KeyReg2;
-      if (KeyReg3 == PRESSED_STATE){
-        TimeOutForKeyPress = 500;
-        subKeyProcess(2);
-      }
-    }
-    else{
-       TimeOutForKeyPress --;
-        if (TimeOutForKeyPress == 0){
-          KeyReg3 = NORMAL_STATE;
-        }
-    }
+  if(HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, BUTTON2_Pin)==PRESSED_STATE){
+	  KeyReg0 = PRESSED_STATE;
+	  button_pressed = 2;
   }
-}
-
-void getKeyInput3(){
-  KeyReg2 = KeyReg1;
-  KeyReg1 = KeyReg0;
-  KeyReg0 = HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin);
+  if(HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin)==PRESSED_STATE){
+	  KeyReg0 = PRESSED_STATE;
+	  button_pressed = 3;
+  }
   if ((KeyReg1 == KeyReg0) && (KeyReg1 == KeyReg2)){
     if (KeyReg2 != KeyReg3){
       KeyReg3 = KeyReg2;
       if (KeyReg3 == PRESSED_STATE){
         TimeOutForKeyPress = 500;
-        subKeyProcess(3);
+        subKeyProcess(button_pressed);
       }
     }
     else{
