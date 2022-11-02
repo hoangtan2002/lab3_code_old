@@ -34,14 +34,6 @@ void blinkLED(int n){
 		return;
 	}
 	switch(n){
-	case 0:
-		HAL_GPIO_WritePin(GREEN1_GPIO_Port, GREEN1_Pin, 1);
-		HAL_GPIO_WritePin(YELLOW1_GPIO_Port, YELLOW1_Pin, 1);
-		HAL_GPIO_WritePin(RED2_GPIO_Port, RED2_Pin, 1);
-		HAL_GPIO_WritePin(GREEN2_GPIO_Port, GREEN2_Pin, 1);
-		HAL_GPIO_TogglePin(RED1_GPIO_Port, RED1_Pin);
-		HAL_GPIO_TogglePin(RED2_GPIO_Port, RED2_Pin);
-		break;
 	case 1:
 		HAL_GPIO_WritePin(RED1_GPIO_Port, RED1_Pin, 1);
 		HAL_GPIO_WritePin(RED2_GPIO_Port, RED2_Pin, 1);

@@ -104,7 +104,7 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Infinite loop */
-
+  int counter = 0;
     /* USER CODE BEGIN WHILE */
   while (1){
 	  modeset();
@@ -120,8 +120,6 @@ int main(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
 	getKeyInput1();
-	//getKeyInput2();
-	//getKeyInput3();
 }
 /**
   * @brief System Clock Configuration

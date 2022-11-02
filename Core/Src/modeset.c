@@ -8,9 +8,9 @@
 #include"modeset.h"
 
 void modeset(){
-	if(isButton1Pressed()){
+	if(isButton1Pressed()==1){
 		mode++;
-		if(mode>3){
+		if(mode==4){
 			mode = 1;
 		}
 	}

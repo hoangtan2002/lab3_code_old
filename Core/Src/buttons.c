@@ -43,9 +43,6 @@ int isButton3Pressed(){
 }
 
 void subKeyProcess(int n){
-	if(n==0 || n > 4){
-		return;
-	}
 	switch(n){
 		case 1:
 			button1_flag = 1;
@@ -68,19 +65,22 @@ void getKeyInput1(){
 	  KeyReg0 = PRESSED_STATE;
 	  button_pressed = 1;
   }
-  if(HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, BUTTON2_Pin)==PRESSED_STATE){
+  else if(HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, BUTTON2_Pin)==PRESSED_STATE){
 	  KeyReg0 = PRESSED_STATE;
 	  button_pressed = 2;
   }
-  if(HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin)==PRESSED_STATE){
+  else if(HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin)==PRESSED_STATE){
 	  KeyReg0 = PRESSED_STATE;
 	  button_pressed = 3;
+  }
+  else{
+	  KeyReg0 = NORMAL_STATE;
   }
   if ((KeyReg1 == KeyReg0) && (KeyReg1 == KeyReg2)){
     if (KeyReg2 != KeyReg3){
       KeyReg3 = KeyReg2;
       if (KeyReg3 == PRESSED_STATE){
-        TimeOutForKeyPress = 500;
+        TimeOutForKeyPress = 100;
         subKeyProcess(button_pressed);
       }
     }
