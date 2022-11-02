@@ -9,6 +9,9 @@
 
 int ledBuffer[4] = {0,0,0,0};
 int segCounter = 0;
+int countDownTime1 = 0;
+int countDownTime2 = 0;
+
 
 void update7SEG ( int index ) {
 	switch ( index ) {
@@ -73,15 +76,15 @@ void display7SEG(int n){
 	HAL_GPIO_WritePin(SEG6_GPIO_Port, SEG6_Pin, a[n][6]);
 }
 
-void updateClock1(int led_1, int led_2){
-	ledBuffer[0] = led_1;
-	ledBuffer[1] = led_2;
+void updateClock1(int num){
+	ledBuffer[0] = num/10;
+	ledBuffer[1] = num%10;
 
 }
 
-void updateClock2(int led_3, int led_4){
-	ledBuffer[2] = led_3;
-	ledBuffer[3] = led_4;
+void updateClock2(int num){
+	ledBuffer[2] = num/10;
+	ledBuffer[3] = num%10;
 }
 
 void segLEDScan(){
@@ -94,3 +97,25 @@ void segLEDScan(){
 	}
 }
 
+void setCountDown1(int n){
+	countDownTime1 = n;
+}
+
+void setCountDown2(int n){
+	countDownTime2 = n;
+}
+
+void countDown1(){
+	if(countDownTime1 == 0 && countDownTime2 == 0){
+		return;
+	}
+	else if(timer4_flag==1){
+		if(countDownTime1 > 0){
+			updateClock1(countDownTime1--);
+		}
+		if(countDownTime2 > 0){
+			updateClock2(countDownTime2--);
+		}
+		setTimer4(100);
+	}
+}

@@ -95,17 +95,18 @@ int main(void)
   MX_TIM2_Init();
   HAL_TIM_Base_Start_IT(&htim2);
   init_LED_array();
+  initTimer();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
 
-  setTimer1(10);
-  setTimer3(10);
+
     /* USER CODE BEGIN WHILE */
   while (1){
 	  fsm_auto_state1();
+	  countDown1();
 	  segLEDScan();
   }
   /* USER CODE END 3 */

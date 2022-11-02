@@ -13,12 +13,17 @@
 
 extern int ledBuffer[4];
 extern int segCounter;
+extern int countDownTime1;
+extern int countDownTime2;
 
 void update7SEG(int n);
 void display7SEG(int n);
-void updateClock1(int led_1, int led_2);
-void updateClock2(int led_3, int led_4);
+void updateClock1(int num);
+void updateClock2(int num);
 void segLEDScan();
 void selectSEG(int n);
+void setCountDown1(int n);
+void setCountDown2(int n);
+void countDown1();
 
 #endif /* INC_7SEG_H_ */
