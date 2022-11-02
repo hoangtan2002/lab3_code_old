@@ -16,7 +16,4 @@ void turn_LED2_on(int n);
 void blinkLED(int n);
 void init_LED_array();
 
-
-
-
 #endif /* INC_LED_H_ */

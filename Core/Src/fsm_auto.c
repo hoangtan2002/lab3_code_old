@@ -6,8 +6,6 @@
  */
 #include "fsm_auto.h"
 
-
-
 void fsm_auto_state1(){
 	if(mode!=1){
 		return;

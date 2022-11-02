@@ -12,4 +12,5 @@
 #include "buttons.h"
 
 void modeset();
+
 #endif /* INC_MODESET_H_ */

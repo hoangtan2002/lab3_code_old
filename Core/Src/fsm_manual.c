@@ -7,8 +7,6 @@
 
 #include"fsm_manual.h"
 
-int isSet = 0;
-
 void fsm_manual_state2(){
 	if(mode!=2){
 		return;
@@ -26,7 +24,6 @@ void fsm_manual_state2(){
 	if(isButton3Pressed()){
 		ledRedTime = ledGreenTime + ledYellowTime;
 		reinitStatus();
-		isSet++;
 	}
 }
 
@@ -48,7 +45,6 @@ void fsm_manual_state3(){
 	if(isButton3Pressed()){
 		ledRedTime = ledGreenTime + ledYellowTime;
 		reinitStatus();
-		isSet++;
 	}
 }
 
