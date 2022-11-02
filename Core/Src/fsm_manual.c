@@ -14,12 +14,12 @@ void fsm_manual_state2(){
 	disableCountDown();
 	blinkLED(1);
 	updateClock1(ledGreenTime);
-	updateClock2(0);
+	updateClock2(mode);
 	if(isButton2Pressed()){
+		ledGreenTime++;
 		if(ledGreenTime == 100){
 			ledGreenTime = 1;
 		}
-		else ledGreenTime++;
 	}
 	if(isButton3Pressed()){
 		ledRedTime = ledGreenTime + ledYellowTime;
@@ -35,12 +35,13 @@ void fsm_manual_state3(){
 	disableCountDown();
 	blinkLED(2);
 	updateClock1(ledYellowTime);
-	updateClock2(0);
+	updateClock2(mode);
 	if(isButton2Pressed()){
+		ledYellowTime++;
 		if(ledYellowTime == 100){
 			ledYellowTime = 1;
 		}
-		else ledYellowTime++;
+
 	}
 	if(isButton3Pressed()){
 		ledRedTime = ledGreenTime + ledYellowTime;
