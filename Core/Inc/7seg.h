@@ -25,5 +25,6 @@ void selectSEG(int n);
 void setCountDown1(int n);
 void setCountDown2(int n);
 void countDown1();
+void disableCountDown();
 
 #endif /* INC_7SEG_H_ */

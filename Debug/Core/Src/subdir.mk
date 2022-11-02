@@ -8,9 +8,11 @@ C_SRCS += \
 ../Core/Src/7seg.c \
 ../Core/Src/buttons.c \
 ../Core/Src/fsm_auto.c \
+../Core/Src/fsm_manual.c \
 ../Core/Src/global.c \
 ../Core/Src/led.c \
 ../Core/Src/main.c \
+../Core/Src/modeset.c \
 ../Core/Src/software_timer.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -22,9 +24,11 @@ OBJS += \
 ./Core/Src/7seg.o \
 ./Core/Src/buttons.o \
 ./Core/Src/fsm_auto.o \
+./Core/Src/fsm_manual.o \
 ./Core/Src/global.o \
 ./Core/Src/led.o \
 ./Core/Src/main.o \
+./Core/Src/modeset.o \
 ./Core/Src/software_timer.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -36,9 +40,11 @@ C_DEPS += \
 ./Core/Src/7seg.d \
 ./Core/Src/buttons.d \
 ./Core/Src/fsm_auto.d \
+./Core/Src/fsm_manual.d \
 ./Core/Src/global.d \
 ./Core/Src/led.d \
 ./Core/Src/main.d \
+./Core/Src/modeset.d \
 ./Core/Src/software_timer.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \

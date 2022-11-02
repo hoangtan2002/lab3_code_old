@@ -119,3 +119,8 @@ void countDown1(){
 		setTimer4(100);
 	}
 }
+
+void disableCountDown(){
+	countDownTime1 = 0;
+	countDownTime2 = 0;
+}

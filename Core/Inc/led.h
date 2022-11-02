@@ -9,6 +9,7 @@
 #define INC_LED_H_
 
 #include"main.h"
+#include"software_timer.h"
 
 void turn_LED1_on(int n);
 void turn_LED2_on(int n);

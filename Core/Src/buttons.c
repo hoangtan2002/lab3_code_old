@@ -64,7 +64,6 @@ void subKeyProcess(int n){
 void getKeyInput1(){
   KeyReg2 = KeyReg1;
   KeyReg1 = KeyReg0;
-  KeyReg0 = HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin);
   if(HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin)==PRESSED_STATE){
 	  KeyReg0 = PRESSED_STATE;
 	  button_pressed = 1;

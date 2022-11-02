@@ -18,12 +18,15 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
 #include "7seg.h"
-#include "led.h"
 #include "buttons.h"
 #include "fsm_auto.h"
+#include "fsm_manual.h"
 #include "global.h"
+#include "led.h"
+#include "main.h"
+#include "modeset.h"
+#include "software_timer.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -102,11 +105,12 @@ int main(void)
 
   /* Infinite loop */
 
-  int count = 0;
-
     /* USER CODE BEGIN WHILE */
   while (1){
+	  modeset();
 	  fsm_auto_state1();
+	  fsm_manual_state2();
+	  fsm_manual_state3();
 	  countDown1();
 	  segLEDScan();
   }

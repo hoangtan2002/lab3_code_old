@@ -7,3 +7,4 @@
 7seg.c:100:6:setCountDown1	16	static
 7seg.c:104:6:setCountDown2	16	static
 7seg.c:108:6:countDown1	8	static
+7seg.c:123:6:disableCountDown	4	static

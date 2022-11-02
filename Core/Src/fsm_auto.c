@@ -5,14 +5,13 @@
  *      Author: tan
  */
 #include "fsm_auto.h"
-#define INIT 1
-#define AUTO_RED 2
-#define AUTO_GREEN 3
-#define AUTO_YELLOW 4
-int status1 = INIT;
-int status2 = INIT;
+
+
 
 void fsm_auto_state1(){
+	if(mode!=1){
+		return;
+	}
   	switch(status1){
   	case INIT:
   		status1 = AUTO_RED;
