@@ -16,7 +16,8 @@ extern int segCounter;
 
 void update7SEG(int n);
 void display7SEG(int n);
-void updateBuffer(int led_1, int led_2, int led_3, int led_4);
+void updateClock1(int led_1, int led_2);
+void updateClock2(int led_3, int led_4);
 void segLEDScan();
 void selectSEG(int n);
 

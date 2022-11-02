@@ -73,9 +73,13 @@ void display7SEG(int n){
 	HAL_GPIO_WritePin(SEG6_GPIO_Port, SEG6_Pin, a[n][6]);
 }
 
-void updateBuffer(int led_1, int led_2, int led_3, int led_4){
+void updateClock1(int led_1, int led_2){
 	ledBuffer[0] = led_1;
 	ledBuffer[1] = led_2;
+
+}
+
+void updateClock2(int led_3, int led_4){
 	ledBuffer[2] = led_3;
 	ledBuffer[3] = led_4;
 }

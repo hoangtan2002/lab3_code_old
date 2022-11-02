@@ -23,6 +23,7 @@
 #include "led.h"
 #include "buttons.h"
 #include "fsm_auto.h"
+#include "global.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -100,15 +101,11 @@ int main(void)
 
   /* Infinite loop */
 
-  setTimer1(1);
-  setTimer3(1);
-  int counter = 0;
-  /* USER CODE BEGIN WHILE */
+  setTimer1(10);
+  setTimer3(10);
+    /* USER CODE BEGIN WHILE */
   while (1){
-	  if(isButton1Pressed()){
-		  counter++;
-	  }
-	  updateBuffer(counter/10, counter%10, counter/10, counter%10);
+	  fsm_auto_state1();
 	  segLEDScan();
   }
   /* USER CODE END 3 */

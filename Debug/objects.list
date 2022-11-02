@@ -1,6 +1,7 @@
 "./Core/Src/7seg.o"
 "./Core/Src/buttons.o"
 "./Core/Src/fsm_auto.o"
+"./Core/Src/global.o"
 "./Core/Src/led.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"

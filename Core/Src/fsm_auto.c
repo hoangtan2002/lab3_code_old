@@ -15,28 +15,28 @@ void fsm_auto_state1(){
   	switch(status){
   	case INIT:
   		status = AUTO_RED;
-  		setTimer1(500);
-  		turn_LED2_on(0);
+  		setTimer1(1000*ledRedTime);
+  		turn_LED1_on(0);
   		break;
   	case AUTO_RED:
   		if(timer1_flag == 1){
   			status = AUTO_GREEN;
-  			turn_LED2_on(1);
-  			setTimer1(300);
+  			turn_LED1_on(1);
+  			setTimer1(1000*ledGreenTime);
   		}
 	break;
   	case AUTO_GREEN:
   		if(timer1_flag == 1){
   			status = AUTO_YELLOW;
-  			turn_LED2_on(2);
-  			setTimer1(200);
+  			turn_LED1_on(2);
+  			setTimer1(1000*ledYellowTime);
   		}
 	break;
   	case AUTO_YELLOW:
   		if(timer1_flag == 1){
   			status = AUTO_RED;
-  			turn_LED2_on(0);
-  			setTimer1(500);
+  			turn_LED1_on(0);
+  			setTimer1(1000*ledRedTime);
   		}
   		break;
   	}

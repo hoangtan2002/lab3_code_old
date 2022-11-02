@@ -10,10 +10,7 @@
 
 #include"7seg.h"
 #include"led.h"
-
-extern int redTime;
-extern int yellowTime;
-extern int greenTime;
+#include"global.h"
 
 void fsm_auto_state1();
 
